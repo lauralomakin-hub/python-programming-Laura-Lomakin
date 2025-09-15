@@ -1,0 +1,19 @@
+# .gitignore based on chatGPT suggestions.
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+
+# VS Code settings
+.vscode/
+
+# OS filer
+.DS_Store
+Thumbs.db
+
