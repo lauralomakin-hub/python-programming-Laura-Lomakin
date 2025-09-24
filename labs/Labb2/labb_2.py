@@ -18,9 +18,10 @@ def load_testpoints(filename):
                 
     return points
 testpoints = load_testpoints("testpoints.txt")
-print(testpoints[:1])
 
-#-------- gör separat funktion för  -----------datapoints = load_data("datapoints.txt")
+# test  print(testpoints[:1])
+
+# separate function for datapoints
 
 
 
@@ -37,19 +38,27 @@ def load_datapoints(filename):
                
     return points
 datapoints = load_datapoints("datapoints.txt")
-print(datapoints[:1])
+# Test remove     print(datapoints[:1])     
+
+import math
+def euclidean_distance (testpoint_coords, datapoint_coords):
+    return math.sqrt(
+        ((testpoint_coords[0]-datapoint_coords[0])**2)+((testpoint_coords[1] - datapoint_coords[1])**2)
+        )
+
+#test
+
+if testpoints and datapoints:
+    tp = testpoints[0]
+    dp = datapoints[0]
+
+    dp_cord = dp[:2]
+    dp_label = dp[2]
+
+    euclidean_distance(tp, dp_cords)
+    print (f"[TEST] tp={tp} dp={dp_cords} avstånd={d:.3f} label={dp_label}")
 
 
 
-#import matplotlib.pyplot as plt
-#import numpy as np
-#import pandas as pd
 
-#def load_data(filename):
-#    with open (filename, r) as file:
-#    for line in file:
-#        width, height = map(float(line.strip(),split())
 
-#points.append((width, height))
-              
-#return points
