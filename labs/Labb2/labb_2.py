@@ -1,3 +1,4 @@
+userponit = None
 #----Importera bibliotek
 import matplotlib.pyplot as plt
 import numpy as np
@@ -40,6 +41,8 @@ def load_datapoints(filename):
     return points
 datapoints = load_datapoints(r"labs\Labb2\datapoints.txt")
 
+
+      
 
 #----Funktion för Euclidean distance  
 
@@ -109,6 +112,7 @@ def get_neighbors(datapoints, tp, k):                #lista med träningsdata, t
 	return neighbors
 
 
+
 #note to self:
     #Om du vill optimera för bonusuppgifterna (accuracy, många upprepningar)
     # kan du ersätta loopen ovan med en NumPy-vektoriserad beräkning:
@@ -147,7 +151,21 @@ for tp in testpoints:
     print("-"*40)                                     #för läsbarhet i terminalen
 
 
+while True:
+    try:
+        print(f"Do you want to determine if this is a Pichu or pikachu?")
 
+        width = float(input("width in cm: "))
+        height = float(input("Height in cm: "))
+        userpoint = (width, height)
+        print(f"your point: {userpoint}")     
+        neighbors = get_neighbors(datapoints, userpoint, k=10)
+        label = majority_vote(neighbors)
+        name = label_name[label]
+        print (f"Name: {name}")
+        break  
+    except ValueError:
+            print("The data must be numerical. Try again!")
 
 
 plt.scatter(
@@ -187,6 +205,25 @@ for i, tp in enumerate(testpoints):
         fontsize=9, 
         color = "red"
     )
+
+if userpoint is not None:
+    plt.scatter(
+        userpoint[0],
+        userpoint[1],
+        color = "purple",
+        marker = "D",
+        s =150,
+        zorder = 10
+    )   
+    plt.text(
+         userpoint[0]+0.2, 
+         userpoint[1]+0.2, 
+         "Userpoint",
+         fontsize=9,
+         color = "Purple",
+         zorder = 11
+    )
+
 
 plt.xlabel("Width")
 plt.ylabel("Height")
