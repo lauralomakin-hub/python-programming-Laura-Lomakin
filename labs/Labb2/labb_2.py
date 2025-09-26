@@ -147,13 +147,6 @@ for tp in testpoints:
     print("-"*40)                                     #för läsbarhet i terminalen
 
 
-     
-     
-
-
-
- 
-
 
 
 
@@ -171,9 +164,34 @@ plt.scatter(
     label ="Pikachu"
 )
 
+label_name = {0: "Pichu", 1: "Pikachu"}
+
+
+for i, tp in enumerate(testpoints):
+    neighbors = get_neighbors(datapoints, tp, k=10)
+    label = majority_vote(neighbors)
+    name = label_name[label]
+    x, y = tp
+
+    plt.scatter(
+        tp[0],
+        tp[1],
+        color = "red",
+        marker = "*",
+        s=150
+    )
+    plt.text(
+        tp[0]+0.1, 
+        tp[1]+ 0.1, 
+        name,
+        fontsize=9, 
+        color = "red"
+    )
+
 plt.xlabel("Width")
 plt.ylabel("Height")
 plt.legend()
 
 plt.title("Pichu or Pikachu?")
-plt.show(Counter)
+
+plt.show()
