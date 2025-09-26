@@ -1,5 +1,6 @@
-# Labb 2 – Klassificering av Pichu och Pikachu
-
+## Labb 2 – Klassificering av Pichu och Pikachu
+# slutar här fredag kl. 22.45:
+Tror att grunduppgiften är klar. Jag är osäker på vad jag gjort på slutet. Behöver läsa lite. Men jag tror det funkar.
 **Syfte:**  
 Använd verktygen du lärt dig i Python för att implementera en förenklad maskininlärningsalgoritm.  
 
