@@ -155,8 +155,8 @@ while True:
     try:
         print(f"Do you want to determine if this is a Pichu or pikachu?")
 
-        width = float(input("width in cm: "))
-        height = float(input("Height in cm: "))
+        width = float(input("width in cm (for decimals use dot '.'): "))
+        height = float(input("Height in cm (for decimals use dot '.'): "))
         if width <=0 or height <=0:
              print("You can not be wright negative values.")
              continue
