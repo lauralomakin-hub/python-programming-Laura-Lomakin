@@ -1,4 +1,4 @@
-userponit = None
+userpoint = None
 #----Importera bibliotek
 import matplotlib.pyplot as plt
 import numpy as np
@@ -157,13 +157,17 @@ while True:
 
         width = float(input("width in cm: "))
         height = float(input("Height in cm: "))
-        userpoint = (width, height)
-        print(f"your point: {userpoint}")     
-        neighbors = get_neighbors(datapoints, userpoint, k=10)
-        label = majority_vote(neighbors)
-        name = label_name[label]
-        print (f"Name: {name}")
-        break  
+        if width <=0 or height <=0:
+             print("You can not be wright negative values.")
+             continue
+        else:
+            userpoint = (width, height)
+            print(f"your point: {userpoint}")     
+            neighbors = get_neighbors(datapoints, userpoint, k=10)
+            label = majority_vote(neighbors)
+            name = label_name[label]
+            print (f"Name: {name}")
+            break  
     except ValueError:
             print("The data must be numerical. Try again!")
 
